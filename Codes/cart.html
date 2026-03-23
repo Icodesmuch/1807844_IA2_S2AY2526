@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shopping cart — MediQuick (WP assignment).">
+  <meta name="theme-color" content="#1a3c5e">
+  <title>Cart — MediQuick</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="../js/main.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container header__container">
+      <a href="index.html" class="header__logo" aria-label="MediQuick Pharmacy Home">
+        <span>MediQuick</span>
+      </a>
+      
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="products.html" class="nav__link">Products</a>
+        <a href="about.html" class="nav__link">About</a>
+        <a href="login.html" class="nav__link">Login</a>
+        <a href="register.html" class="nav__link">Register</a>
+        <a href="cart.html" class="nav__link nav__link--active nav__cart" aria-label="Shopping cart">
+          Cart
+          <span class="nav__cart-badge" id="cart-count">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="cart-section">
+      <div class="container">
+        <header class="section__header">
+          <h1 class="section__title">Shopping Cart</h1>
+          <p class="section__subtitle">All prices in Jamaican dollars (J$). Change quantities to update totals.</p>
+        </header>
+        
+        <div class="cart-table">
+          <div class="cart-table__wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Product Name</th>
+                  <th scope="col">Unit Price</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Sub-total</th>
+                  <th scope="col">Discount (%)</th>
+                  <th scope="col">Tax (15%)</th>
+                  <th scope="col">Total</th>
+                </tr>
+              </thead>
+              
+              <tbody id="cart-tbody">
+                <tr class="cart-row" data-unit="950" data-discount-pct="0">
+                  <td>Paracetamol 500mg</td>
+                  <td>J$950.00</td>
+                  <td>
+                    <input type="number" value="2" min="1" max="99" class="cart-table__qty-input" aria-label="Quantity for Paracetamol 500mg">
+                  </td>
+                  <td data-calc="sub">J$1,900.00</td>
+                  <td>0%</td>
+                  <td data-calc="tax">J$285.00</td>
+                  <td data-calc="total"><strong>J$2,185.00</strong></td>
+                </tr>
+                <tr class="cart-row" data-unit="2050" data-discount-pct="10">
+                  <td>Vitamin C 1000mg</td>
+                  <td>J$2,050.00</td>
+                  <td>
+                    <input type="number" value="1" min="1" max="99" class="cart-table__qty-input" aria-label="Quantity for Vitamin C 1000mg">
+                  </td>
+                  <td data-calc="sub">J$2,050.00</td>
+                  <td>10%</td>
+                  <td data-calc="tax">J$276.75</td>
+                  <td data-calc="total"><strong>J$2,121.75</strong></td>
+                </tr>
+                <tr class="cart-row" data-unit="3900" data-discount-pct="5">
+                  <td>First Aid Kit</td>
+                  <td>J$3,900.00</td>
+                  <td>
+                    <input type="number" value="1" min="1" max="99" class="cart-table__qty-input" aria-label="Quantity for First Aid Kit">
+                  </td>
+                  <td data-calc="sub">J$3,900.00</td>
+                  <td>5%</td>
+                  <td data-calc="tax">J$555.75</td>
+                  <td data-calc="total"><strong>J$4,260.75</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <aside class="cart-summary" aria-label="Cart summary">
+          <h2 class="cart-summary__title">Order Summary</h2>
+          
+          <div class="cart-summary__row">
+            <span>Sub-total:</span>
+            <span id="cart-sum-sub">J$7,850.00</span>
+          </div>
+          
+          <div class="cart-summary__row">
+            <span>Discount Amount:</span>
+            <span id="cart-sum-disc">-J$400.00</span>
+          </div>
+          
+          <div class="cart-summary__row">
+            <span>Tax Amount (15%):</span>
+            <span id="cart-sum-tax">J$1,117.50</span>
+          </div>
+          
+          <div class="cart-summary__row cart-summary__row--total">
+            <span>Grand Total:</span>
+            <span id="cart-sum-grand">J$8,568.50</span>
+          </div>
+        </aside>
+        
+        <div class="cart-actions">
+          <a href="index.html" class="btn btn--outline">Continue shopping</a>
+          <button type="button" class="btn btn--danger" id="cart-clear">
+            Clear All
+          </button>
+          <a href="checkout.html" class="btn btn--primary">Checkout</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__section">
+        <h4>MediQuick Pharmacy</h4>
+        <p>Sample e-commerce site for WP coursework.</p>
+      </div>
+      
+      <div class="footer__section">
+        <h4>Quick Links</h4>
+        <nav class="footer__links" aria-label="Footer navigation">
+          <a href="index.html" class="footer__link">Home</a>
+          <a href="products.html" class="footer__link">Products</a>
+          <a href="about.html" class="footer__link">About</a>
+          <a href="cart.html" class="footer__link">Cart</a>
+          <a href="login.html" class="footer__link">Login</a>
+        </nav>
+      </div>
+      
+      <div class="footer__section">
+        <h4>Customer Service</h4>
+        <nav class="footer__links">
+          <a href="checkout.html" class="footer__link">Checkout</a>
+          <a href="register.html" class="footer__link">Register</a>
+        </nav>
+      </div>
+      
+      <div class="footer__section footer__contact">
+        <h4>Contact Us</h4>
+        <p><strong>Address:</strong> 123 Health Street, Medical City</p>
+        <p><strong>Phone:</strong> 1-800-MEDIQUICK</p>
+        <p><strong>Email:</strong> <a href="mailto:jalencdaley@students.utech.edu.jm" class="footer__link">jalencdaley@students.utech.edu.jm</a>
+        </p>
+      </div>
+    </div>
+    
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 MediQuick Pharmacy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

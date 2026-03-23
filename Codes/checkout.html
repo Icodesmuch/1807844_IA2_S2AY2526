@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Checkout — MediQuick (WP assignment).">
+  <meta name="theme-color" content="#1a3c5e">
+  <title>Checkout — MediQuick</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="../js/main.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container header__container">
+      <a href="index.html" class="header__logo" aria-label="MediQuick Pharmacy Home">
+        <span>MediQuick</span>
+      </a>
+      
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="products.html" class="nav__link">Products</a>
+        <a href="about.html" class="nav__link">About</a>
+        <a href="login.html" class="nav__link">Login</a>
+        <a href="register.html" class="nav__link">Register</a>
+        <a href="cart.html" class="nav__link nav__cart" aria-label="Shopping cart">
+          Cart
+          <span class="nav__cart-badge" id="cart-count">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="checkout-section">
+      <div class="container">
+        <header class="section__header">
+          <h1 class="section__title">Checkout</h1>
+          <p class="section__subtitle">Shipping and payment fields (demo; form does not process a real payment).</p>
+        </header>
+        
+        <div class="checkout-grid">
+          
+          <div class="checkout-panel">
+            <h2 class="checkout-panel__title">Order summary</h2>
+            
+            <div class="order-items">
+              <div class="order-item">
+                <div>
+                  <strong>Paracetamol 500mg</strong>
+                  <br>
+                  <small class="text-muted">Qty: 2 × J$950.00</small>
+                </div>
+                <span>J$1,900.00</span>
+              </div>
+              
+              <div class="order-item">
+                <div>
+                  <strong>Vitamin C 1000mg</strong>
+                  <br>
+                  <small class="text-muted">Qty: 1 × J$2,050.00</small>
+                </div>
+                <span>J$2,050.00</span>
+              </div>
+              
+              <div class="order-item">
+                <div>
+                  <strong>First Aid Kit</strong>
+                  <br>
+                  <small class="text-muted">Qty: 1 × J$3,900.00</small>
+                </div>
+                <span>J$3,900.00</span>
+              </div>
+            </div>
+            
+            <div class="cart-summary cart-summary--minimal">
+              <div class="cart-summary__row">
+                <span>Sub-total:</span>
+                <span>J$7,850.00</span>
+              </div>
+              
+              <div class="cart-summary__row">
+                <span>Discount:</span>
+                <span>-J$400.00</span>
+              </div>
+              
+              <div class="cart-summary__row">
+                <span>Tax (15%):</span>
+                <span>J$1,117.50</span>
+              </div>
+              
+              <div class="cart-summary__row cart-summary__row--total">
+                <span>Grand Total:</span>
+                <span>J$8,568.50</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="checkout-panel">
+            <h2 class="checkout-panel__title">Shipping</h2>
+            
+            <form id="checkout-form" class="form checkout-form--plain" action="#" method="POST" aria-label="Shipping and payment form">
+              <p id="checkout-error" class="form-msg" role="alert" hidden></p>
+              <fieldset class="form__fieldset">
+                <legend class="form__legend">Delivery Address</legend>
+                
+                <div class="form__group">
+                  <label for="shipping-name" class="form__label form__label--required">
+                    Full Name
+                  </label>
+                  <input 
+                    type="text" 
+                    id="shipping-name" 
+                    name="shipping-name" 
+                    class="form__input"
+                    placeholder="Full name"
+                    autocomplete="name"
+                    required
+                    aria-required="true"
+                  >
+                </div>
+                
+                <div class="form__group">
+                  <label for="address" class="form__label form__label--required">
+                    Delivery Address
+                  </label>
+                  <input 
+                    type="text" 
+                    id="address" 
+                    name="address" 
+                    class="form__input"
+                    placeholder="Street address"
+                    autocomplete="street-address"
+                    required
+                    aria-required="true"
+                  >
+                </div>
+                
+                <div class="form__group">
+                  <label for="city" class="form__label form__label--required">
+                    City
+                  </label>
+                  <input 
+                    type="text" 
+                    id="city" 
+                    name="city" 
+                    class="form__input"
+                    placeholder="City"
+                    autocomplete="address-level2"
+                    required
+                    aria-required="true"
+                  >
+                </div>
+                
+                <div class="form__group">
+                  <label for="parish" class="form__label form__label--required">
+                    Parish / State
+                  </label>
+                  <input 
+                    type="text" 
+                    id="parish" 
+                    name="parish" 
+                    class="form__input"
+                    placeholder="Parish / state"
+                    autocomplete="address-level1"
+                    required
+                    aria-required="true"
+                  >
+                </div>
+                
+                <div class="form__group">
+                  <label for="postal-code" class="form__label form__label--required">
+                    Postal Code
+                  </label>
+                  <input 
+                    type="text" 
+                    id="postal-code" 
+                    name="postal-code" 
+                    class="form__input"
+                    placeholder="Postal code"
+                    autocomplete="postal-code"
+                    required
+                    aria-required="true"
+                  >
+                </div>
+              </fieldset>
+              
+              <fieldset class="form__fieldset">
+                <legend class="form__legend">Payment Method</legend>
+                
+                <div class="form__radio-group">
+                  <input 
+                    type="radio" 
+                    id="payment-card" 
+                    name="payment-method" 
+                    value="credit-card"
+                    class="form__radio"
+                    checked
+                    required
+                  >
+                  <label for="payment-card">Credit card</label>
+                </div>
+                
+                <div class="form__radio-group">
+                  <input 
+                    type="radio" 
+                    id="payment-cod" 
+                    name="payment-method" 
+                    value="cash-on-delivery"
+                    class="form__radio"
+                  >
+                  <label for="payment-cod">Cash on delivery</label>
+                </div>
+                
+                <div class="form__group form__group--spaced">
+                  <label for="amount-paid" class="form__label form__label--required">
+                    Amount Being Paid
+                  </label>
+                  <input 
+                    type="text" 
+                    id="amount-paid" 
+                    name="amount-paid" 
+                    class="form__input"
+                    value="J$8,568.50"
+                    readonly
+                    aria-describedby="amount-help"
+                  >
+                  <small id="amount-help" class="text-muted">Total amount including tax and discounts</small>
+                </div>
+              </fieldset>
+              
+              <div class="form__actions">
+                <button type="submit" class="btn btn--primary" name="submit-action" value="confirm">
+                  Confirm
+                </button>
+                <button type="submit" class="btn btn--outline" name="submit-action" value="checkout">
+                  Check Out
+                </button>
+                <button type="reset" class="btn btn--outline">
+                  Clear All
+                </button>
+                <a href="cart.html" class="btn btn--danger">Cancel</a>
+                <a href="index.html" class="btn btn--outline">Close</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__section">
+        <h4>MediQuick Pharmacy</h4>
+        <p>Sample e-commerce site for WP coursework.</p>
+      </div>
+      
+      <div class="footer__section">
+        <h4>Quick Links</h4>
+        <nav class="footer__links" aria-label="Footer navigation">
+          <a href="index.html" class="footer__link">Home</a>
+          <a href="products.html" class="footer__link">Products</a>
+          <a href="about.html" class="footer__link">About</a>
+          <a href="cart.html" class="footer__link">Cart</a>
+          <a href="login.html" class="footer__link">Login</a>
+        </nav>
+      </div>
+      
+      <div class="footer__section">
+        <h4>Customer Service</h4>
+        <nav class="footer__links">
+          <a href="checkout.html" class="footer__link">Checkout</a>
+          <a href="register.html" class="footer__link">Register</a>
+        </nav>
+      </div>
+      
+      <div class="footer__section footer__contact">
+        <h4>Contact Us</h4>
+        <p><strong>Address:</strong> 123 Health Street, Medical City</p>
+        <p><strong>Phone:</strong> 1-800-MEDIQUICK</p>
+        <p><strong>Email:</strong> <a href="mailto:jalencdaley@students.utech.edu.jm" class="footer__link">jalencdaley@students.utech.edu.jm</a>
+        </p>
+      </div>
+    </div>
+    
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 MediQuick Pharmacy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

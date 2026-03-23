@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Login — MediQuick (WP assignment).">
+  <meta name="theme-color" content="#1a3c5e">
+  <title>Login — MediQuick</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="../js/main.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container header__container">
+      <a href="index.html" class="header__logo" aria-label="MediQuick Pharmacy Home">
+        <span>MediQuick</span>
+      </a>
+      
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="products.html" class="nav__link">Products</a>
+        <a href="about.html" class="nav__link">About</a>
+        <a href="login.html" class="nav__link nav__link--active">Login</a>
+        <a href="register.html" class="nav__link">Register</a>
+        <a href="cart.html" class="nav__link nav__cart" aria-label="Shopping cart">
+          Cart
+          <span class="nav__cart-badge" id="cart-count">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="auth-page">
+    <div class="auth-card">
+      <header class="auth-card__header">
+        <h1 class="auth-card__title">Log in</h1>
+        <p class="auth-card__subtitle">Username and password (demo form).</p>
+      </header>
+      
+      <form id="login-form" class="form" action="#" method="POST" aria-label="Login form">
+        <p id="login-error" class="form-msg" role="alert" hidden></p>
+        <fieldset class="form__fieldset">
+          <legend class="form__legend">Account</legend>
+          
+          <div class="form__group">
+            <label for="username" class="form__label form__label--required">
+              Username
+            </label>
+            <input 
+              type="text" 
+              id="username" 
+              name="username" 
+              class="form__input"
+              placeholder="Username"
+              autocomplete="username"
+              required
+              aria-required="true"
+            >
+          </div>
+          
+          <div class="form__group">
+            <label for="password" class="form__label form__label--required">
+              Password
+            </label>
+            <input 
+              type="password" 
+              id="password" 
+              name="password" 
+              class="form__input"
+              placeholder="Password"
+              autocomplete="current-password"
+              required
+              aria-required="true"
+            >
+          </div>
+          
+          <div class="form__checkbox-group">
+            <input 
+              type="checkbox" 
+              id="remember" 
+              name="remember" 
+              class="form__checkbox"
+            >
+            <label for="remember">Remember me</label>
+          </div>
+        </fieldset>
+        
+        <div class="form__actions">
+          <button type="submit" class="btn btn--primary btn--block">
+            Login
+          </button>
+        </div>
+        
+        <p class="form__link">
+          No account? <a href="register.html">Register</a>
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__section">
+        <h4>MediQuick Pharmacy</h4>
+        <p>Sample e-commerce site for WP coursework.</p>
+      </div>
+      
+      <div class="footer__section">
+        <h4>Quick Links</h4>
+        <nav class="footer__links" aria-label="Footer navigation">
+          <a href="index.html" class="footer__link">Home</a>
+          <a href="products.html" class="footer__link">Products</a>
+          <a href="about.html" class="footer__link">About</a>
+          <a href="cart.html" class="footer__link">Cart</a>
+          <a href="login.html" class="footer__link">Login</a>
+        </nav>
+      </div>
+      
+      <div class="footer__section">
+        <h4>Customer Service</h4>
+        <nav class="footer__links">
+          <a href="checkout.html" class="footer__link">Checkout</a>
+          <a href="register.html" class="footer__link">Register</a>
+        </nav>
+      </div>
+      
+      <div class="footer__section footer__contact">
+        <h4>Contact Us</h4>
+        <p><strong>Address:</strong> 123 Health Street, Medical City</p>
+        <p><strong>Phone:</strong> 1-800-MEDIQUICK</p>
+        <p><strong>Email:</strong> <a href="mailto:jalencdaley@students.utech.edu.jm" class="footer__link">jalencdaley@students.utech.edu.jm</a>
+        </p>
+      </div>
+    </div>
+    
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 MediQuick Pharmacy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
