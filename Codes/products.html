@@ -1,160 +1,213 @@
 <!DOCTYPE html>
+
+
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Products — MediQuick Pharmacy (CIT2011 IA#2).">
+
+  <meta name="description" content="Products — MediQuick Pharmacy (CIT2011 Group Project).">
+
   <meta name="theme-color" content="#1a3c5e">
-  <title>Products — MediQuick</title>
+
+  <title>Products — MediQuick Pharmacy</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   <link rel="stylesheet" href="../style.css">
+
   <script src="../js/main.js" defer></script>
+
 </head>
+
 <body>
+
   <header class="header">
+
     <div class="container header__container">
+
       <a href="index.html" class="header__logo" aria-label="MediQuick Pharmacy Home">
+
+        <span class="material-icons header__logo-icon" aria-hidden="true">local_pharmacy</span>
+
         <span>MediQuick</span>
+
       </a>
-      
+
       <nav class="nav" aria-label="Main navigation">
-        <a href="index.html" class="nav__link">Home</a>
-        <a href="products.html" class="nav__link nav__link--active">Products</a>
-        <a href="about.html" class="nav__link">About</a>
-        <a href="login.html" class="nav__link">Login</a>
-        <a href="register.html" class="nav__link">Register</a>
-        <a href="cart.html" class="nav__link nav__cart" aria-label="Shopping cart">
-          Cart
-          <span class="nav__cart-badge" id="cart-count">0</span>
+
+        <a href="products.html" class="nav__link nav__link--active">
+
+          <span class="material-icons" aria-hidden="true">medication</span>Products
+
         </a>
+
+        <a href="cart.html" class="nav__link nav__cart" aria-label="Shopping cart">
+
+          <span class="material-icons" aria-hidden="true">shopping_cart</span>Cart
+
+          <span class="nav__cart-badge" id="cart-count">0</span>
+
+        </a>
+
+        <a href="about.html" class="nav__link">
+
+          <span class="material-icons" aria-hidden="true">info</span>About
+
+        </a>
+
+        <a href="dashboard.html" class="nav__link" id="nav-dashboard" style="display:none;">
+
+          <span class="material-icons" aria-hidden="true">dashboard</span>Dashboard
+
+        </a>
+
+        <a href="index.html" class="nav__link" id="nav-logout" style="display:none;">
+
+          <span class="material-icons" aria-hidden="true">logout</span>Logout
+
+        </a>
+
+        <a href="index.html" class="nav__link" id="nav-login">
+
+          <span class="material-icons" aria-hidden="true">login</span>Login
+
+        </a>
+
       </nav>
+
     </div>
+
   </header>
 
+
+
   <main>
+
     <section id="products" class="section section--alt" aria-labelledby="products-title">
+
       <div class="container">
+
         <header class="section__header">
-          <h1 id="products-title" class="section__title">Products</h1>
-          <p class="section__subtitle">Prices in Jamaican dollars (J$). Product photos are from Unsplash (see storyboard references).</p>
+
+          <h1 id="products-title" class="section__title">Our Products</h1>
+
+          <p class="section__subtitle">All prices in Jamaican dollars (J$). Add items to your cart below.</p>
+
         </header>
-        
-        <div class="products-grid">
-          <article class="card">
-            <div class="card__image">
-              <img src="../Assets/paracetamol.jpg" alt="Paracetamol 500mg pack" width="320" height="200" loading="lazy">
-            </div>
-            <div class="card__body">
-              <h2 class="card__title">Paracetamol 500mg</h2>
-              <p class="card__description">Pain relief and fever reducer. 20 tablets.</p>
-              <p class="card__price">J$950.00</p>
-              <button type="button" class="btn btn--primary btn--block" data-add-cart>Add to cart</button>
-            </div>
-          </article>
-          
-          <article class="card">
-            <div class="card__image">
-              <img src="../Assets/vitamin-c.jpg" alt="Vitamin C bottle" width="320" height="200" loading="lazy">
-            </div>
-            <div class="card__body">
-              <h2 class="card__title">Vitamin C 1000mg</h2>
-              <p class="card__description">Vitamin C supplement. 60 tablets.</p>
-              <p class="card__price">J$2,050.00</p>
-              <button type="button" class="btn btn--primary btn--block" data-add-cart>Add to cart</button>
-            </div>
-          </article>
-          
-          <article class="card">
-            <div class="card__image">
-              <img src="../Assets/first-aid.jpg" alt="First aid kit" width="320" height="200" loading="lazy">
-            </div>
-            <div class="card__body">
-              <h2 class="card__title">First Aid Kit</h2>
-              <p class="card__description">Bandages, antiseptic, and basics.</p>
-              <p class="card__price">J$3,900.00</p>
-              <button type="button" class="btn btn--primary btn--block" data-add-cart>Add to cart</button>
-            </div>
-          </article>
-          
-          <article class="card">
-            <div class="card__image">
-              <img src="../Assets/ibuprofen.jpg" alt="Ibuprofen pack" width="320" height="200" loading="lazy">
-            </div>
-            <div class="card__body">
-              <h2 class="card__title">Ibuprofen 400mg</h2>
-              <p class="card__description">Anti-inflammatory. 30 tablets.</p>
-              <p class="card__price">J$1,350.00</p>
-              <button type="button" class="btn btn--primary btn--block" data-add-cart>Add to cart</button>
-            </div>
-          </article>
-          
-          <article class="card">
-            <div class="card__image">
-              <img src="../Assets/thermometer.jpg" alt="Digital thermometer" width="320" height="200" loading="lazy">
-            </div>
-            <div class="card__body">
-              <h2 class="card__title">Digital Thermometer</h2>
-              <p class="card__description">Home use thermometer.</p>
-              <p class="card__price">J$2,500.00</p>
-              <button type="button" class="btn btn--primary btn--block" data-add-cart>Add to cart</button>
-            </div>
-          </article>
-          
-          <article class="card">
-            <div class="card__image">
-              <img src="../Assets/multivitamin.jpg" alt="Multivitamin bottle" width="320" height="200" loading="lazy">
-            </div>
-            <div class="card__body">
-              <h2 class="card__title">Multivitamin Complex</h2>
-              <p class="card__description">Daily vitamins. 90 tablets.</p>
-              <p class="card__price">J$3,150.00</p>
-              <button type="button" class="btn btn--primary btn--block" data-add-cart>Add to cart</button>
-            </div>
-          </article>
+
+
+
+        <div class="products-filter">
+
+          <input
+
+            type="search"
+
+            id="product-search"
+
+            class="products-filter__input"
+
+            placeholder="Search products..."
+
+            aria-label="Search products"
+
+          >
+
         </div>
+
+
+
+        <div class="products-grid" id="products-container">
+
+          <!-- Populated dynamically by JS -->
+
+          <div class="empty-state">
+
+            <span class="material-icons empty-state__icon">hourglass_empty</span>
+
+            <p>Loading products…</p>
+
+          </div>
+
+        </div>
+
       </div>
+
     </section>
+
   </main>
 
+
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+
+
   <footer class="footer">
+
     <div class="container footer__container">
+
       <div class="footer__section">
+
         <h4>MediQuick Pharmacy</h4>
-        <p>Sample e-commerce front page for WP coursework.</p>
+
+        <p>Quality healthcare products, delivered with care.</p>
+
       </div>
-      
+
       <div class="footer__section">
+
         <h4>Quick Links</h4>
+
         <nav class="footer__links" aria-label="Footer navigation">
-          <a href="index.html" class="footer__link">Home</a>
+
           <a href="products.html" class="footer__link">Products</a>
-          <a href="about.html" class="footer__link">About</a>
+
           <a href="cart.html" class="footer__link">Cart</a>
-          <a href="login.html" class="footer__link">Login</a>
+
+          <a href="about.html" class="footer__link">About</a>
+
+          <a href="dashboard.html" class="footer__link">Dashboard</a>
+
         </nav>
+
       </div>
-      
-      <div class="footer__section">
-        <h4>Customer Service</h4>
-        <nav class="footer__links">
-          <a href="checkout.html" class="footer__link">Checkout</a>
-          <a href="register.html" class="footer__link">Register</a>
-        </nav>
-      </div>
-      
+
       <div class="footer__section footer__contact">
-        <h4>Contact Us</h4>
-        <p><strong>Address:</strong> 123 Health Street, Medical City</p>
+
+        <h4>Contact</h4>
+
+        <p><strong>Address:</strong> 123 Health Street, Kingston, Jamaica</p>
+
         <p><strong>Phone:</strong> 1-800-MEDIQUICK</p>
-        <p><strong>Email:</strong> <a href="mailto:jalencdaley@students.utech.edu.jm" class="footer__link">jalencdaley@students.utech.edu.jm</a>
-        </p>
+
+        <p><strong>Email:</strong> <a href="mailto:jalencdaley@students.utech.edu.jm" class="footer__link">jalencdaley@students.utech.edu.jm</a></p>
+
       </div>
+
     </div>
-    
+
     <div class="footer__bottom">
+
       <div class="container">
+
         <p>&copy; 2026 MediQuick Pharmacy. All rights reserved.</p>
+
       </div>
+
     </div>
+
   </footer>
+
 </body>
+
 </html>
+

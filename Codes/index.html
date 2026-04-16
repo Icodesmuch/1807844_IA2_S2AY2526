@@ -1,129 +1,252 @@
 <!DOCTYPE html>
+
+
+
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MediQuick Pharmacy — CIT2011 IA#2 (HTML, CSS, JavaScript).">
+
+  <meta name="description" content="Login — MediQuick Pharmacy (CIT2011 Group Project).">
+
   <meta name="theme-color" content="#1a3c5e">
-  <title>MediQuick Pharmacy</title>
+
+  <title>Login — MediQuick Pharmacy</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   <link rel="stylesheet" href="../style.css">
+
   <script src="../js/main.js" defer></script>
+
 </head>
+
 <body>
+
   <header class="header">
+
     <div class="container header__container">
+
       <a href="index.html" class="header__logo" aria-label="MediQuick Pharmacy Home">
+
+        <span class="material-icons header__logo-icon" aria-hidden="true">local_pharmacy</span>
+
         <span>MediQuick</span>
+
       </a>
-      
+
       <nav class="nav" aria-label="Main navigation">
-        <a href="index.html" class="nav__link nav__link--active">Home</a>
-        <a href="products.html" class="nav__link">Products</a>
-        <a href="about.html" class="nav__link">About</a>
-        <a href="login.html" class="nav__link">Login</a>
-        <a href="register.html" class="nav__link">Register</a>
-        <a href="cart.html" class="nav__link nav__cart" aria-label="Shopping cart">
-          Cart
-          <span class="nav__cart-badge" id="cart-count">0</span>
+
+        <a href="index.html" class="nav__link nav__link--active">
+
+          <span class="material-icons" aria-hidden="true">login</span>Login
+
         </a>
+
+        <a href="register.html" class="nav__link">
+
+          <span class="material-icons" aria-hidden="true">person_add</span>Register
+
+        </a>
+
       </nav>
+
     </div>
+
   </header>
 
-  <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="container">
-        <h1 id="hero-title" class="hero__title">MediQuick Pharmacy</h1>
-        <p class="hero__subtitle">
-          CIT2011 e-commerce demo — hand-coded HTML, CSS, and JavaScript (not a real pharmacy).
-        </p>
-        <a href="products.html" class="btn btn--primary btn--lg">View products</a>
-      </div>
-    </section>
 
-    <section class="section" aria-labelledby="features-title">
-      <div class="container">
-        <h2 id="features-title" class="sr-only">Features</h2>
-        
-        <div class="features">
-          <article class="feature">
-            <div class="feature__icon" aria-hidden="true">1</div>
-            <h3 class="feature__title">Delivery</h3>
-            <p class="feature__text">
-              Free delivery on orders over J$7,500 (demo threshold).
-            </p>
-          </article>
-          
-          <article class="feature">
-            <div class="feature__icon" aria-hidden="true">2</div>
-            <h3 class="feature__title">Pharmacist checks</h3>
-            <p class="feature__text">
-              Demo only — a real site would connect to a pharmacist workflow.
-            </p>
-          </article>
-          
-          <article class="feature">
-            <div class="feature__icon" aria-hidden="true">3</div>
-            <h3 class="feature__title">Support</h3>
-            <p class="feature__text">
-              Contact details are on the About page if you have questions about this project.
-            </p>
-          </article>
+
+  <main class="auth-page">
+
+    <div class="auth-card">
+
+      <header class="auth-card__header">
+
+        <h1 class="auth-card__title">Welcome Back</h1>
+
+        <p class="auth-card__subtitle">Enter your TRN and password to access your account.</p>
+
+      </header>
+
+
+
+      <form id="login-form" class="form" action="#" method="POST" aria-label="Login form" novalidate>
+
+        <p id="login-error" class="form-msg" role="alert" hidden></p>
+
+
+
+        <fieldset class="form__fieldset">
+
+          <legend class="form__legend">Account</legend>
+
+
+
+          <div class="form__group">
+
+            <label for="trn" class="form__label form__label--required">
+
+              Tax Registration Number (TRN)
+
+            </label>
+
+            <input
+
+              type="text"
+
+              id="trn"
+
+              name="trn"
+
+              class="form__input"
+
+              placeholder="000-000-000"
+
+              autocomplete="username"
+
+              maxlength="11"
+
+              required
+
+              aria-required="true"
+
+            >
+
+          </div>
+
+
+
+          <div class="form__group">
+
+            <label for="password" class="form__label form__label--required">
+
+              Password
+
+            </label>
+
+            <input
+
+              type="password"
+
+              id="password"
+
+              name="password"
+
+              class="form__input"
+
+              placeholder="Password"
+
+              autocomplete="current-password"
+
+              required
+
+              aria-required="true"
+
+            >
+
+          </div>
+
+        </fieldset>
+
+
+
+        <div class="form__actions">
+
+          <button type="submit" class="btn btn--primary" style="flex:1;">
+
+            <span class="material-icons" aria-hidden="true">login</span>Login
+
+          </button>
+
+          <button type="reset" class="btn btn--outline">
+
+            <span class="material-icons" aria-hidden="true">cancel</span>Cancel
+
+          </button>
+
         </div>
-      </div>
-    </section>
 
-    <section class="section section--alt" aria-labelledby="products-cta">
-      <div class="container">
-        <header class="section__header">
-          <h2 id="products-cta" class="section__title">Products</h2>
-          <p class="section__subtitle">Browse items with images and prices on the Products page.</p>
-          <p><a href="products.html" class="btn btn--primary">Go to Products</a></p>
-        </header>
-      </div>
-    </section>
+
+
+        <p class="form__link">
+
+          <a href="#" id="reset-password-link">Forgot password? Reset it</a>
+
+        </p>
+
+        <p class="form__link">
+
+          No account? <a href="register.html">Register here</a>
+
+        </p>
+
+      </form>
+
+    </div>
+
   </main>
 
+
+
   <footer class="footer">
+
     <div class="container footer__container">
+
       <div class="footer__section">
+
         <h4>MediQuick Pharmacy</h4>
-        <p>Sample e-commerce front page for WP coursework.</p>
+
+        <p>Quality healthcare products, delivered with care.</p>
+
       </div>
-      
+
       <div class="footer__section">
+
         <h4>Quick Links</h4>
+
         <nav class="footer__links" aria-label="Footer navigation">
-          <a href="index.html" class="footer__link">Home</a>
-          <a href="products.html" class="footer__link">Products</a>
-          <a href="about.html" class="footer__link">About</a>
-          <a href="cart.html" class="footer__link">Cart</a>
-          <a href="login.html" class="footer__link">Login</a>
-        </nav>
-      </div>
-      
-      <div class="footer__section">
-        <h4>Customer Service</h4>
-        <nav class="footer__links">
-          <a href="checkout.html" class="footer__link">Checkout</a>
+
+          <a href="index.html" class="footer__link">Login</a>
+
           <a href="register.html" class="footer__link">Register</a>
+
         </nav>
+
       </div>
-      
+
       <div class="footer__section footer__contact">
-        <h4>Contact Us</h4>
-        <p><strong>Address:</strong> 123 Health Street, Medical City</p>
-        <p><strong>Phone:</strong> 1-800-MEDIQUICK</p>
-        <p><strong>Email:</strong> <a href="mailto:jalencdaley@students.utech.edu.jm" class="footer__link">jalencdaley@students.utech.edu.jm</a>
-        </p>
+
+        <h4>Contact</h4>
+
+        <p><strong>Address:</strong> 123 Health Street, Kingston, Jamaica</p>
+
+        <p><strong>Email:</strong> <a href="mailto:jalencdaley@students.utech.edu.jm" class="footer__link">jalencdaley@students.utech.edu.jm</a></p>
+
       </div>
+
     </div>
-    
+
     <div class="footer__bottom">
+
       <div class="container">
+
         <p>&copy; 2026 MediQuick Pharmacy. All rights reserved.</p>
+
       </div>
+
     </div>
+
   </footer>
+
 </body>
+
 </html>
+

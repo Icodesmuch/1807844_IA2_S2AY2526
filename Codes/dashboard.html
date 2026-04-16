@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dashboard  MediQuick Pharmacy (CIT2011 Group Project).">
+  <meta name="theme-color" content="#1a3c5e">
+  <title>Dashboard  MediQuick Pharmacy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../js/main.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container header__container">
+      <a href="index.html" class="header__logo" aria-label="MediQuick Pharmacy Home">
+        <span class="material-icons header__logo-icon" aria-hidden="true">local_pharmacy</span>
+        <span>MediQuick</span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="products.html" class="nav__link">
+          <span class="material-icons" aria-hidden="true">medication</span>Products
+        </a>
+        <a href="cart.html" class="nav__link nav__cart" aria-label="Shopping cart">
+          <span class="material-icons" aria-hidden="true">shopping_cart</span>Cart
+          <span class="nav__cart-badge" id="cart-count">0</span>
+        </a>
+        <a href="dashboard.html" class="nav__link nav__link--active">
+          <span class="material-icons" aria-hidden="true">dashboard</span>Dashboard
+        </a>
+        <a href="index.html" class="nav__link" id="nav-logout" style="display:none;">
+          <span class="material-icons" aria-hidden="true">logout</span>Logout
+        </a>
+        <a href="index.html" class="nav__link" id="nav-login">
+          <span class="material-icons" aria-hidden="true">login</span>Login
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="dashboard-section">
+      <div class="container">
+        <header class="section__header">
+          <h1 class="section__title">
+            <span class="material-icons" aria-hidden="true">dashboard</span> Dashboard
+          </h1>
+          <p class="section__subtitle">User frequency statistics and invoice records.</p>
+        </header>
+
+        <div class="dashboard-grid">
+
+          <!-- User Frequency  Gender -->
+          <div class="dashboard-panel">
+            <h2 class="dashboard-panel__title">
+              <span class="material-icons" aria-hidden="true">people</span> Users by Gender
+            </h2>
+            <div class="chart" id="chart-gender" aria-label="Gender frequency chart">
+              <p class="text-muted">No registered users yet.</p>
+            </div>
+          </div>
+
+          <!-- User Frequency  Age Group -->
+          <div class="dashboard-panel">
+            <h2 class="dashboard-panel__title">
+              <span class="material-icons" aria-hidden="true">cake</span> Users by Age Group
+            </h2>
+            <div class="chart" id="chart-age" aria-label="Age group frequency chart">
+              <p class="text-muted">No registered users yet.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- All Invoices -->
+        <div class="dashboard-panel" style="margin-top: 2rem;">
+          <h2 class="dashboard-panel__title">
+            <span class="material-icons" aria-hidden="true">receipt_long</span> All Invoices
+          </h2>
+
+          <div class="search-bar">
+            <input
+              type="search"
+              id="invoice-search"
+              class="search-bar__input"
+              placeholder="Search by TRN (e.g. 123-456-789)"
+              aria-label="Search invoices by TRN"
+            >
+            <button type="button" class="btn btn--secondary btn--sm" id="invoice-search-btn">
+              <span class="material-icons" aria-hidden="true">search</span>Search
+            </button>
+            <button type="button" class="btn btn--outline btn--sm" id="invoice-search-clear">
+              <span class="material-icons" aria-hidden="true">clear</span>Clear
+            </button>
+          </div>
+
+          <div style="overflow-x:auto;">
+            <table class="data-table" id="invoices-table" aria-label="All invoices">
+              <thead>
+                <tr>
+                  <th scope="col">Invoice #</th>
+                  <th scope="col">TRN</th>
+                  <th scope="col">Customer</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Items</th>
+                  <th scope="col">Grand Total</th>
+                </tr>
+              </thead>
+              <tbody id="invoices-tbody">
+                <tr>
+                  <td colspan="6" class="data-table__empty">No invoices found.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__section">
+        <h4>MediQuick Pharmacy</h4>
+        <p>Quality healthcare products, delivered with care.</p>
+      </div>
+      <div class="footer__section">
+        <h4>Quick Links</h4>
+        <nav class="footer__links" aria-label="Footer navigation">
+          <a href="products.html" class="footer__link">Products</a>
+          <a href="cart.html" class="footer__link">Cart</a>
+          <a href="dashboard.html" class="footer__link">Dashboard</a>
+        </nav>
+      </div>
+      <div class="footer__section footer__contact">
+        <h4>Contact</h4>
+        <p><strong>Email:</strong> <a href="mailto:jalencdaley@students.utech.edu.jm" class="footer__link">jalencdaley@students.utech.edu.jm</a></p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 MediQuick Pharmacy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

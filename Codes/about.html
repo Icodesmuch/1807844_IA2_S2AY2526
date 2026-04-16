@@ -1,11 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="About MediQuick — student project (UTech Web Programming).">
+  <meta name="description" content="About MediQuick — CIT2011 Group Project (UTech Web Programming).">
   <meta name="theme-color" content="#1a3c5e">
-  <title>About Us - MediQuick Pharmacy</title>
+  <title>About — MediQuick Pharmacy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
   <script src="../js/main.js" defer></script>
 </head>
@@ -13,18 +17,28 @@
   <header class="header">
     <div class="container header__container">
       <a href="index.html" class="header__logo" aria-label="MediQuick Pharmacy Home">
+        <span class="material-icons header__logo-icon" aria-hidden="true">local_pharmacy</span>
         <span>MediQuick</span>
       </a>
-      
       <nav class="nav" aria-label="Main navigation">
-        <a href="index.html" class="nav__link">Home</a>
-        <a href="products.html" class="nav__link">Products</a>
-        <a href="about.html" class="nav__link nav__link--active">About</a>
-        <a href="login.html" class="nav__link">Login</a>
-        <a href="register.html" class="nav__link">Register</a>
+        <a href="products.html" class="nav__link">
+          <span class="material-icons" aria-hidden="true">medication</span>Products
+        </a>
         <a href="cart.html" class="nav__link nav__cart" aria-label="Shopping cart">
-          Cart
+          <span class="material-icons" aria-hidden="true">shopping_cart</span>Cart
           <span class="nav__cart-badge" id="cart-count">0</span>
+        </a>
+        <a href="about.html" class="nav__link nav__link--active">
+          <span class="material-icons" aria-hidden="true">info</span>About
+        </a>
+        <a href="dashboard.html" class="nav__link" id="nav-dashboard" style="display:none;">
+          <span class="material-icons" aria-hidden="true">dashboard</span>Dashboard
+        </a>
+        <a href="index.html" class="nav__link" id="nav-logout" style="display:none;">
+          <span class="material-icons" aria-hidden="true">logout</span>Logout
+        </a>
+        <a href="index.html" class="nav__link" id="nav-login">
+          <span class="material-icons" aria-hidden="true">login</span>Login
         </a>
       </nav>
     </div>
@@ -35,109 +49,68 @@
       <div class="container">
         <header class="section__header">
           <h1 class="section__title">About MediQuick Pharmacy</h1>
-          <p class="section__subtitle">Business info and assignment details</p>
+          <p class="section__subtitle">Project information and student details</p>
         </header>
-        
+
         <div class="about-grid">
-          
+
           <article class="about-card">
             <h2 class="about-card__title">
+              <span class="material-icons about-card__icon" aria-hidden="true">storefront</span>
               Our Story
             </h2>
             <p>
-              MediQuick is a made-up online pharmacy for this assignment: customers can browse items, 
-              use a cart, and go through checkout as a demonstration. It is not a real business.
+              MediQuick Pharmacy was founded with one goal: making essential healthcare products
+              accessible and affordable for every Jamaican household. We stock a carefully
+              curated range of over-the-counter medicines, vitamins, and first-aid supplies.
             </p>
             <p>
-              The idea was approved by my tutor. The site uses HTML, CSS, and JavaScript with sample text and prices.
+              From pain relief to daily wellness, our team is committed to helping you and your
+              family stay healthy — quickly and conveniently.
             </p>
           </article>
-          
+
           <article class="about-card">
             <h2 class="about-card__title">
-              Mission & Vision
+              <span class="material-icons about-card__icon" aria-hidden="true">lightbulb</span>
+              Mission &amp; Vision
             </h2>
-            
             <div class="mission-vision">
               <div class="mission-vision__item">
                 <h4>Our Mission</h4>
                 <p>
-                  Keep the demo site clear and easy to use: simple navigation, readable forms, and 
-                  honest labelling that this is coursework.
+                  To provide fast, reliable access to quality pharmaceutical products through
+                  a seamless online shopping experience, backed by excellent customer service.
                 </p>
               </div>
-              
               <div class="mission-vision__item">
                 <h4>Our Vision</h4>
                 <p>
-                  Finish the course with a site that meets the rubric: semantic HTML, CSS, JavaScript,
-                  hosting, and GitHub as required.
+                  To become the most trusted online pharmacy in Jamaica, empowering communities
+                  with affordable healthcare solutions and professional guidance.
                 </p>
               </div>
             </div>
           </article>
-          
+
           <article class="about-card">
             <h2 class="about-card__title">
-              Student &amp; project details
-            </h2>
-            
-            <p>Built for CIT2011 Web Programming — Individual Assignment 2.</p>
-            
-            <div class="student-details">
-              <div class="student-details__row">
-                <span class="student-details__label">Full name:</span>
-                <span>Jalen Daley</span>
-              </div>
-              
-              <div class="student-details__row">
-                <span class="student-details__label">Student ID#:</span>
-                <span>1807844</span>
-              </div>
-              
-              <div class="student-details__row">
-                <span class="student-details__label">Email:</span>
-                <span>
-                  <a href="mailto:jalencdaley@students.utech.edu.jm">jalencdaley@students.utech.edu.jm</a>
-                </span>
-              </div>
-              
-              <div class="student-details__row">
-                <span class="student-details__label">Module code / name:</span>
-                <span>CIT2011 — Web Programming</span>
-              </div>
-              
-              <div class="student-details__row">
-                <span class="student-details__label">Assignment:</span>
-                <span>Individual Assignment 2 — Semester 2, AY 25–26</span>
-              </div>
-              
-              <div class="student-details__row">
-                <span class="student-details__label">Class day &amp; time:</span>
-                <span>Friday, 8:00 AM</span>
-              </div>
-            </div>
-          </article>
-          
-          <article class="about-card">
-            <h2 class="about-card__title">
+              <span class="material-icons about-card__icon" aria-hidden="true">contact_mail</span>
               Get In Touch
             </h2>
-            
-            <p>Questions about this student project: use the email below.</p>
-            
+            <p>We'd love to hear from you. Reach us through any of the channels below.</p>
             <div class="about-card__contact-block">
-              <p><strong>Address (fictional):</strong><br>123 Health Street, Medical City, Jamaica</p>
-              <p><strong>Phone (fictional):</strong><br>1-800-MEDIQUICK (1-800-633-4784)</p>
-              <p><strong>Hours (fictional):</strong><br>Mon–Fri 8am–10pm; Sat–Sun 9am–6pm</p>
+              <p><strong>Address:</strong><br>123 Health Street, Kingston, Jamaica</p>
+              <p><strong>Phone:</strong><br>1-800-MEDIQUICK (1-800-633-4784)</p>
+              <p><strong>Hours:</strong><br>Mon–Fri 8am–10pm &bull; Sat–Sun 9am–6pm</p>
             </div>
-            
             <div class="about-card__cta">
               <a href="mailto:jalencdaley@students.utech.edu.jm" class="btn btn--primary btn--lg btn--block">
-                Email me
+                <span class="material-icons" aria-hidden="true">email</span>Email Me
               </a>
             </div>
           </article>
+
         </div>
       </div>
     </section>
@@ -147,37 +120,24 @@
     <div class="container footer__container">
       <div class="footer__section">
         <h4>MediQuick Pharmacy</h4>
-        <p>Sample e-commerce front page for WP coursework.</p>
+        <p>Quality healthcare products, delivered with care.</p>
       </div>
-      
       <div class="footer__section">
         <h4>Quick Links</h4>
         <nav class="footer__links" aria-label="Footer navigation">
-          <a href="index.html" class="footer__link">Home</a>
           <a href="products.html" class="footer__link">Products</a>
-          <a href="about.html" class="footer__link">About</a>
           <a href="cart.html" class="footer__link">Cart</a>
-          <a href="login.html" class="footer__link">Login</a>
+          <a href="about.html" class="footer__link">About</a>
+          <a href="dashboard.html" class="footer__link">Dashboard</a>
         </nav>
       </div>
-      
-      <div class="footer__section">
-        <h4>Customer Service</h4>
-        <nav class="footer__links">
-          <a href="checkout.html" class="footer__link">Checkout</a>
-          <a href="register.html" class="footer__link">Register</a>
-        </nav>
-      </div>
-      
       <div class="footer__section footer__contact">
-        <h4>Contact Us</h4>
-        <p><strong>Address:</strong> 123 Health Street, Medical City</p>
+        <h4>Contact</h4>
+        <p><strong>Address:</strong> 123 Health Street, Kingston, Jamaica</p>
         <p><strong>Phone:</strong> 1-800-MEDIQUICK</p>
-        <p><strong>Email:</strong> <a href="mailto:jalencdaley@students.utech.edu.jm" class="footer__link">jalencdaley@students.utech.edu.jm</a>
-        </p>
+        <p><strong>Email:</strong> <a href="mailto:jalencdaley@students.utech.edu.jm" class="footer__link">jalencdaley@students.utech.edu.jm</a></p>
       </div>
     </div>
-    
     <div class="footer__bottom">
       <div class="container">
         <p>&copy; 2026 MediQuick Pharmacy. All rights reserved.</p>

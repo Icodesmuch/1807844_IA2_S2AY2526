@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Invoice ? MediQuick Pharmacy (CIT2011 Group Project).">
+  <meta name="theme-color" content="#1a3c5e">
+  <title>Invoice ? MediQuick Pharmacy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../js/main.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container header__container">
+      <a href="index.html" class="header__logo" aria-label="MediQuick Pharmacy Home">
+        <span class="material-icons header__logo-icon" aria-hidden="true">local_pharmacy</span>
+        <span>MediQuick</span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="products.html" class="nav__link">
+          <span class="material-icons" aria-hidden="true">medication</span>Products
+        </a>
+        <a href="cart.html" class="nav__link nav__cart" aria-label="Shopping cart">
+          <span class="material-icons" aria-hidden="true">shopping_cart</span>Cart
+          <span class="nav__cart-badge" id="cart-count">0</span>
+        </a>
+        <a href="dashboard.html" class="nav__link" id="nav-dashboard" style="display:none;">
+          <span class="material-icons" aria-hidden="true">dashboard</span>Dashboard
+        </a>
+        <a href="index.html" class="nav__link" id="nav-logout" style="display:none;">
+          <span class="material-icons" aria-hidden="true">logout</span>Logout
+        </a>
+        <a href="index.html" class="nav__link" id="nav-login">
+          <span class="material-icons" aria-hidden="true">login</span>Login
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="invoice-section">
+      <div class="container">
+
+        <div class="invoice" id="invoice-doc">
+          <div class="invoice__header">
+            <div class="invoice__logo">
+              <span class="material-icons" style="vertical-align:middle;margin-right:6px;" aria-hidden="true">local_pharmacy</span>
+              MediQuick Pharmacy
+            </div>
+            <div class="invoice__meta">
+              <p>Invoice #: <strong id="inv-number">?</strong></p>
+              <p>Date: <strong id="inv-date">?</strong></p>
+              <p>TRN: <strong id="inv-trn">?</strong></p>
+            </div>
+          </div>
+
+          <div class="invoice__customer">
+            <h3>Bill To</h3>
+            <p id="inv-name">?</p>
+            <p id="inv-address">?</p>
+            <p id="inv-city-parish">?</p>
+            <p id="inv-postal">?</p>
+            <p>Payment: <strong id="inv-payment">?</strong></p>
+          </div>
+
+          <table class="invoice__table" aria-label="Invoice items">
+            <thead>
+              <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Unit Price</th>
+                <th scope="col">Qty</th>
+                <th scope="col">Discount</th>
+                <th scope="col">Sub-total</th>
+              </tr>
+            </thead>
+            <tbody id="inv-items">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+
+          <div class="invoice__totals">
+            <div class="invoice__totals-row">
+              <span>Sub-total:</span>
+              <span id="inv-subtotal">J$0.00</span>
+            </div>
+            <div class="invoice__totals-row">
+              <span>Discount:</span>
+              <span id="inv-discount">-J$0.00</span>
+            </div>
+            <div class="invoice__totals-row">
+              <span>Tax (15%):</span>
+              <span id="inv-tax">J$0.00</span>
+            </div>
+            <div class="invoice__totals-row invoice__totals-row--grand">
+              <span>Grand Total:</span>
+              <span id="inv-total">J$0.00</span>
+            </div>
+          </div>
+
+          <div class="invoice__footer">
+            <p>Thank you for choosing MediQuick Pharmacy. We appreciate your business.</p>
+            <p class="text-muted" style="margin-top:4px;">
+              A copy of this invoice has been sent to your registered email address.
+            </p>
+          </div>
+        </div>
+
+        <div class="invoice__actions">
+          <button type="button" class="btn btn--primary" onclick="window.print()">
+            <span class="material-icons" aria-hidden="true">print</span>Print Invoice
+          </button>
+          <a href="products.html" class="btn btn--outline">
+            <span class="material-icons" aria-hidden="true">shopping_bag</span>Continue Shopping
+          </a>
+          <a href="dashboard.html" class="btn btn--secondary">
+            <span class="material-icons" aria-hidden="true">dashboard</span>View Dashboard
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__section">
+        <h4>MediQuick Pharmacy</h4>
+        <p>Quality healthcare products, delivered with care.</p>
+      </div>
+      <div class="footer__section">
+        <h4>Quick Links</h4>
+        <nav class="footer__links" aria-label="Footer navigation">
+          <a href="products.html" class="footer__link">Products</a>
+          <a href="dashboard.html" class="footer__link">Dashboard</a>
+        </nav>
+      </div>
+      <div class="footer__section footer__contact">
+        <h4>Contact</h4>
+        <p><strong>Email:</strong> <a href="mailto:jalencdaley@students.utech.edu.jm" class="footer__link">jalencdaley@students.utech.edu.jm</a></p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 MediQuick Pharmacy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

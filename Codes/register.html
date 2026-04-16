@@ -1,11 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Registration — MediQuick (WP assignment).">
+  <meta name="description" content="Register — MediQuick Pharmacy (CIT2011 Group Project).">
   <meta name="theme-color" content="#1a3c5e">
-  <title>Register — MediQuick</title>
+  <title>Register — MediQuick Pharmacy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
   <script src="../js/main.js" defer></script>
 </head>
@@ -13,175 +17,123 @@
   <header class="header">
     <div class="container header__container">
       <a href="index.html" class="header__logo" aria-label="MediQuick Pharmacy Home">
+        <span class="material-icons header__logo-icon" aria-hidden="true">local_pharmacy</span>
         <span>MediQuick</span>
       </a>
-      
       <nav class="nav" aria-label="Main navigation">
-        <a href="index.html" class="nav__link">Home</a>
-        <a href="products.html" class="nav__link">Products</a>
-        <a href="about.html" class="nav__link">About</a>
-        <a href="login.html" class="nav__link">Login</a>
-        <a href="register.html" class="nav__link nav__link--active">Register</a>
-        <a href="cart.html" class="nav__link nav__cart" aria-label="Shopping cart">
-          Cart
-          <span class="nav__cart-badge" id="cart-count">0</span>
+        <a href="index.html" class="nav__link">
+          <span class="material-icons" aria-hidden="true">login</span>Login
+        </a>
+        <a href="register.html" class="nav__link nav__link--active">
+          <span class="material-icons" aria-hidden="true">person_add</span>Register
         </a>
       </nav>
     </div>
   </header>
 
-  <main class="auth-page">
-    <div class="auth-card auth-card--wide">
+  <main class="auth-page" style="align-items: flex-start; padding-top: 2rem;">
+    <div class="auth-card auth-card--wide" style="max-width:600px; margin: 0 auto;">
       <header class="auth-card__header">
-        <h1 class="auth-card__title">Register</h1>
-        <p class="auth-card__subtitle">New account form (not connected to a database).</p>
+        <h1 class="auth-card__title">Create Account</h1>
+        <p class="auth-card__subtitle">Complete all fields below. You must be 18 or older to register.</p>
       </header>
-      
-      <form id="register-form" class="form" action="#" method="POST" aria-label="Registration form">
+
+      <form id="register-form" class="form" action="#" method="POST" aria-label="Registration form" novalidate>
         <p id="register-error" class="form-msg" role="alert" hidden></p>
+
         <fieldset class="form__fieldset">
           <legend class="form__legend">Personal Information</legend>
-          
+
           <div class="form__group">
-            <label for="fullname" class="form__label form__label--required">
-              Full Name
-            </label>
-            <input 
-              type="text" 
-              id="fullname" 
-              name="fullname" 
-              class="form__input"
-              placeholder="Full name"
-              autocomplete="name"
-              required
-              aria-required="true"
-            >
+            <label for="firstName" class="form__label form__label--required">First Name</label>
+            <input type="text" id="firstName" name="firstName" class="form__input"
+              placeholder="First name" autocomplete="given-name" required aria-required="true">
           </div>
-          
+
           <div class="form__group">
-            <label for="dob" class="form__label form__label--required">
-              Date of Birth
-            </label>
-            <input 
-              type="date" 
-              id="dob" 
-              name="dob" 
-              class="form__input"
-              required
-              aria-required="true"
-            >
+            <label for="lastName" class="form__label form__label--required">Last Name</label>
+            <input type="text" id="lastName" name="lastName" class="form__input"
+              placeholder="Last name" autocomplete="family-name" required aria-required="true">
           </div>
-          
+
           <div class="form__group">
-            <label for="email" class="form__label form__label--required">
-              Email Address
-            </label>
-            <input 
-              type="email" 
-              id="email" 
-              name="email" 
-              class="form__input"
-              placeholder="Email"
-              autocomplete="email"
-              required
-              aria-required="true"
-            >
+            <label for="dob" class="form__label form__label--required">Date of Birth</label>
+            <input type="date" id="dob" name="dob" class="form__input"
+              required aria-required="true">
           </div>
-          
+
           <div class="form__group">
-            <label for="phone" class="form__label form__label--required">
-              Phone Number
-            </label>
-            <input 
-              type="tel" 
-              id="phone" 
-              name="phone" 
-              class="form__input"
-              placeholder="Phone"
-              autocomplete="tel"
-              required
-              aria-required="true"
-            >
+            <label for="gender" class="form__label form__label--required">Gender</label>
+            <select id="gender" name="gender" class="form__select" required aria-required="true">
+              <option value="">— Select —</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form__group">
+            <label for="phone" class="form__label form__label--required">Phone Number</label>
+            <input type="tel" id="phone" name="phone" class="form__input"
+              placeholder="876-000-0000" autocomplete="tel" required aria-required="true">
+          </div>
+
+          <div class="form__group">
+            <label for="email" class="form__label form__label--required">Email Address</label>
+            <input type="email" id="email" name="email" class="form__input"
+              placeholder="email@example.com" autocomplete="email" required aria-required="true">
           </div>
         </fieldset>
-        
+
         <fieldset class="form__fieldset">
           <legend class="form__legend">Account Information</legend>
-          
+
           <div class="form__group">
-            <label for="username" class="form__label form__label--required">
-              Username
+            <label for="trn" class="form__label form__label--required">
+              Tax Registration Number (TRN)
             </label>
-            <input 
-              type="text" 
-              id="username" 
-              name="username" 
-              class="form__input"
-              placeholder="Username"
-              autocomplete="username"
-              required
-              aria-required="true"
-            >
+            <input type="text" id="trn" name="trn" class="form__input"
+              placeholder="000-000-000" maxlength="11"
+              required aria-required="true"
+              aria-describedby="trn-help">
+            <small id="trn-help" class="text-muted">Format: 000-000-000 (must be unique)</small>
           </div>
-          
+
           <div class="form__group">
-            <label for="password" class="form__label form__label--required">
-              Password
-            </label>
-            <input 
-              type="password" 
-              id="password" 
-              name="password" 
-              class="form__input"
-              placeholder="Password"
-              autocomplete="new-password"
-              required
-              aria-required="true"
-              minlength="8"
-            >
+            <label for="password" class="form__label form__label--required">Password</label>
+            <input type="password" id="password" name="password" class="form__input"
+              placeholder="Minimum 8 characters" autocomplete="new-password"
+              required aria-required="true" minlength="8">
           </div>
-          
+
           <div class="form__group">
-            <label for="confirm-password" class="form__label form__label--required">
-              Confirm Password
-            </label>
-            <input 
-              type="password" 
-              id="confirm-password" 
-              name="confirm-password" 
-              class="form__input"
-              placeholder="Repeat password"
-              autocomplete="new-password"
-              required
-              aria-required="true"
-              minlength="8"
-            >
+            <label for="confirm-password" class="form__label form__label--required">Confirm Password</label>
+            <input type="password" id="confirm-password" name="confirm-password" class="form__input"
+              placeholder="Repeat password" autocomplete="new-password"
+              required aria-required="true" minlength="8">
           </div>
-          
+
           <div class="form__checkbox-group">
-            <input 
-              type="checkbox" 
-              id="terms" 
-              name="terms" 
-              class="form__checkbox"
-              required
-              aria-required="true"
-            >
+            <input type="checkbox" id="terms" name="terms" class="form__checkbox"
+              required aria-required="true">
             <label for="terms">
-              I agree to the <a href="#" target="_blank">Terms & Conditions</a> 
+              I agree to the <a href="#" target="_blank">Terms &amp; Conditions</a>
               and <a href="#" target="_blank">Privacy Policy</a>
             </label>
           </div>
         </fieldset>
-        
+
         <div class="form__actions">
-          <button type="submit" class="btn btn--primary btn--block">
-            Register
+          <button type="submit" class="btn btn--primary" style="flex:1;">
+            <span class="material-icons" aria-hidden="true">how_to_reg</span>Register
+          </button>
+          <button type="reset" class="btn btn--outline">
+            <span class="material-icons" aria-hidden="true">cancel</span>Cancel
           </button>
         </div>
-        
+
         <p class="form__link">
-          Have an account? <a href="login.html">Log in</a>
+          Already have an account? <a href="index.html">Log in</a>
         </p>
       </form>
     </div>
@@ -191,37 +143,20 @@
     <div class="container footer__container">
       <div class="footer__section">
         <h4>MediQuick Pharmacy</h4>
-        <p>Sample e-commerce site for WP coursework.</p>
+        <p>Quality healthcare products, delivered with care.</p>
       </div>
-      
       <div class="footer__section">
         <h4>Quick Links</h4>
         <nav class="footer__links" aria-label="Footer navigation">
-          <a href="index.html" class="footer__link">Home</a>
-          <a href="products.html" class="footer__link">Products</a>
-          <a href="about.html" class="footer__link">About</a>
-          <a href="cart.html" class="footer__link">Cart</a>
-          <a href="login.html" class="footer__link">Login</a>
-        </nav>
-      </div>
-      
-      <div class="footer__section">
-        <h4>Customer Service</h4>
-        <nav class="footer__links">
-          <a href="checkout.html" class="footer__link">Checkout</a>
+          <a href="index.html" class="footer__link">Login</a>
           <a href="register.html" class="footer__link">Register</a>
         </nav>
       </div>
-      
       <div class="footer__section footer__contact">
-        <h4>Contact Us</h4>
-        <p><strong>Address:</strong> 123 Health Street, Medical City</p>
-        <p><strong>Phone:</strong> 1-800-MEDIQUICK</p>
-        <p><strong>Email:</strong> <a href="mailto:jalencdaley@students.utech.edu.jm" class="footer__link">jalencdaley@students.utech.edu.jm</a>
-        </p>
+        <h4>Contact</h4>
+        <p><strong>Email:</strong> <a href="mailto:jalencdaley@students.utech.edu.jm" class="footer__link">jalencdaley@students.utech.edu.jm</a></p>
       </div>
     </div>
-    
     <div class="footer__bottom">
       <div class="container">
         <p>&copy; 2026 MediQuick Pharmacy. All rights reserved.</p>

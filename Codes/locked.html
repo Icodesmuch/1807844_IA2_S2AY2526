@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Account Locked � MediQuick Pharmacy.">
+  <meta name="theme-color" content="#1a3c5e">
+  <title>Account Locked � MediQuick Pharmacy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__container">
+      <a href="index.html" class="header__logo" aria-label="MediQuick Pharmacy Home">
+        <span class="material-icons header__logo-icon" aria-hidden="true">local_pharmacy</span>
+        <span>MediQuick</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="locked-page">
+    <div class="locked-card">
+      <div class="locked-card__icon">
+        <span class="material-icons" style="font-size:4rem;">lock</span>
+      </div>
+      <h1 class="locked-card__title">Account Locked</h1>
+      <p>You have exceeded the maximum number of login attempts (3).</p>
+      <p class="text-muted" style="margin-top:0.5rem;">
+        Close this browser tab and try again later, or reset your password.
+      </p>
+      <div style="margin-top:2rem; display:flex; flex-direction:column; gap:1rem;">
+        <a href="index.html" class="btn btn--primary">
+          <span class="material-icons" aria-hidden="true">arrow_back</span>Back to Login
+        </a>
+        <a href="register.html" class="btn btn--outline">
+          <span class="material-icons" aria-hidden="true">person_add</span>Create New Account
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom" style="border:none; margin:0; padding: 1rem 0;">
+        <p>&copy; 2026 MediQuick Pharmacy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
